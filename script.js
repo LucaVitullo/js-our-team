@@ -9,6 +9,7 @@ stampare dinamicamente una card per ogni membro del team.
 BONUS:
 Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un *nuovo oggetto*, il quale viene *inserito nell'array iniziale* e viene stampata una nuova card con tutte le informazioni inserite dall'utente.*/
 
+const teamContainer =document.querySelector('.team-container');
 
 const membri =[
     {
@@ -30,9 +31,9 @@ const membri =[
 
     },
     {
-        nome:'Scott Estada',
+        nome:'Scott Estrada',
         ruolo:'Developer',
-        foto: 'img/scott-estada-developer.jpg'
+        foto: 'img/scott-estrada-developer.jpg'
 
     },
     {
@@ -51,3 +52,27 @@ const membri =[
 console.log(membri);
 
 
+function creoCarta(){
+    for(let i=0; i<membri.length;i++){
+
+
+        const teamCard =document.createElement('div');
+        teamCard.className='team-Card';
+        teamContainer.appendChild(teamCard);
+
+        const contenitoreCardImage =document.createElement('div');
+        contenitoreCardImage.className='card-image';
+        teamCard.appendChild(contenitoreCardImage);
+        const cardImage=document.createElement('img')
+        contenitoreCardImage.appendChild(cardImage)
+        cardImage.src = membri[i].foto;
+        
+
+        const cardText =document.createElement('div');
+        cardText.className='card-text';
+        teamCard.appendChild(cardText);
+        
+    }
+}
+
+creoCarta();
