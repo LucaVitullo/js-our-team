@@ -57,7 +57,7 @@ function creoCarta(){
 
 
         const teamCard =document.createElement('div');
-        teamCard.className='team-Card';
+        teamCard.className='team-card';
         teamContainer.appendChild(teamCard);
 
         const contenitoreCardImage =document.createElement('div');
@@ -71,9 +71,13 @@ function creoCarta(){
         const cardText =document.createElement('div');
         cardText.className='card-text';
         teamCard.appendChild(cardText);
-        cardText.innerHTML= membri[i].nome;
+        const cardNome=document.createElement('h2');
+        const cardRuolo=document.createElement('p');
 
-        
+        cardText.appendChild(cardNome);
+        cardText.appendChild(cardRuolo);
+        cardNome.innerHTML=membri[i].nome;
+        cardRuolo.innerHTML=membri[i].ruolo;        
     }
 }
 
