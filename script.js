@@ -51,7 +51,7 @@ const membri =[
 ];
 console.log(membri);
 
-
+//creo una funzione per le carte inserendogli le immagini ed il testo
 function creoCarta(){
     for(let i=0; i<membri.length;i++){
 
@@ -71,6 +71,8 @@ function creoCarta(){
         const cardText =document.createElement('div');
         cardText.className='card-text';
         teamCard.appendChild(cardText);
+        cardText.innerHTML= membri[i].nome;
+
         
     }
 }
